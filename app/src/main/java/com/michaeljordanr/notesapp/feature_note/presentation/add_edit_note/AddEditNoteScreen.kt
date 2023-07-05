@@ -39,6 +39,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.michaeljordanr.notesapp.core.util.TestTags
 import com.michaeljordanr.notesapp.feature_note.domain.model.Note
 import com.michaeljordanr.notesapp.feature_note.presentation.add_edit_note.components.TransparentHintTextField
 import kotlinx.coroutines.flow.collectLatest
@@ -87,7 +88,7 @@ fun AddEditNoteScreen(
                 }, containerColor = MaterialTheme.colorScheme.primary,
                 shape = CircleShape
             ) {
-                Icon(imageVector = Icons.Default.Check, contentDescription = "Save Note")
+                Icon(imageVector = Icons.Default.Check, contentDescription = "Save")
             }
         },
         snackbarHost = { SnackbarHost(hostState = snackBarHostState) },
@@ -146,7 +147,8 @@ fun AddEditNoteScreen(
                 },
                 isHintVisible = titleState.isHintVisible,
                 singleLine = true,
-                textStyle = MaterialTheme.typography.displaySmall
+                textStyle = MaterialTheme.typography.displaySmall,
+                testTag = TestTags.TITLE_TEXT_FIELD
             )
             Spacer(modifier = Modifier.height(8.dp))
             TransparentHintTextField(
@@ -160,7 +162,8 @@ fun AddEditNoteScreen(
                 },
                 isHintVisible = contentState.isHintVisible,
                 textStyle = MaterialTheme.typography.bodyMedium,
-                modifier = Modifier.fillMaxHeight()
+                modifier = Modifier.fillMaxHeight(),
+                testTag = TestTags.CONTENT_TEXT_FIELD
             )
         }
     }

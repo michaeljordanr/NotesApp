@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 import com.michaeljordanr.notesapp.ui.theme.BabyBlue
 import com.michaeljordanr.notesapp.ui.theme.LightGreen
 import com.michaeljordanr.notesapp.ui.theme.RedOrange
-import com.michaeljordanr.notesapp.ui.theme.RedPink
+import com.michaeljordanr.notesapp.ui.theme.BabyGreen
 import com.michaeljordanr.notesapp.ui.theme.Violet
 
 @Entity
@@ -17,7 +17,7 @@ data class Note(
     @PrimaryKey val id: Int? = null
 ) {
     companion object {
-        val noteColors = listOf(RedOrange, LightGreen, Violet, BabyBlue, RedPink)
+        val noteColors = listOf(RedOrange, LightGreen, Violet, BabyBlue, BabyGreen)
     }
 }
 
